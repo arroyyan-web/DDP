@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <style>
+        /* ====== GLOBAL STYLE ====== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ====== FORM CONTAINER ====== */
+.form-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ====== TITLE & DESCRIPTION ====== */
+.form-container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #000;
+}
+
+.form-container p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* ====== FORM INPUTS ====== */
+.form-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #007bff;
+}
+
+/* ====== SECTION TITLES ====== */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 25px 0 10px 0;
+}
+
+.section-title1 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  margin: 25px 0 10px 0;
+}
+
+
+.membership-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.membership-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.sports-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.sports-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.agreement {
+  margin: 15px 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+button {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+  <h2>Membership Registration Form</h2>
+  <p>Please fill out the form below to become a member.</p>
+
+  <form>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Enter your first name" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter your last name" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email address" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Address Line 1</label>
+      <input type="text" placeholder="Enter your address line 1" required>
+    </div>
+
+    <div class="form-group">
+      <label>Address Line 2</label>
+      <input type="text" placeholder="Enter your address line 2">
+    </div>
+
+    <div class="form-group">
+      <label>Country</label>
+      <select required>
+        <option>United States of America</option>
+        <option>Brazil</option>
+        <option>Egypt</option>
+        <option>China</option>
+      </select>
+    </div>
+
+    <div class="section-title1">Membership Type</div>
+    <div class="membership-options">
+      <label><input type="radio" name="membership" required> Basic</label>
+      <label><input type="radio" name="membership"> Premium</label>
+      <label><input type="radio" name="membership"> Elite</label>
+    </div>
+
+    <div class="section-title">Interests</div>
+    <label>Favorite Sports</label>
+    <div class="sports-options">
+      <label><input type="checkbox"> Football</label>
+      <label><input type="checkbox"> Basketball</label>
+      <label><input type="checkbox"> Baseball</label>
+      <label><input type="checkbox"> Hockey</label>
+      <label><input type="checkbox"> Soccer</label>
+      <label><input type="checkbox"> Other</label>
+    </div>
+
+    <label>Why do you want to become a member?</label>
+    <textarea rows="4" placeholder="Please tell us why you want to join"></textarea>
+
+    <div class="agreement">
+      <input type="checkbox" required>
+      <label>I agree to the terms and conditions.</label>
+    </div>
+
+    <button type="submit">Submit Registration</button>
+  </form>
+</div>
+
+</body>
+</html>

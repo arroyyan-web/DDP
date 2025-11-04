@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Registration</title>
+    <style>
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+.form-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 450px;
+}
+
+
+.form-container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #000;
+}
+
+.form-container p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #000;
+}
+
+.class-days {
+  margin: 20px 0;
+}
+
+.class-days label {
+  display: block;
+  margin-bottom: 6px;
+  color: #000;
+  font-weight: 500;
+}
+
+.class-days p {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 13px;
+}
+
+.days-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.days-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.agreement {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+  <h2>Class Registration Form</h2>
+  <p>Please fill out the form below to register for our class</p>
+
+  <form>
+    <div class="form-group">
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+    </div>
+
+    <label for="class-level">Class Level</label>
+    <select id="class-level">
+      <option>Select your class level</option>
+      <option>Easy</option>
+      <option>Normal</option>
+      <option>Hard</option>
+    </select>
+    <p>Please choose the appropriate level for your experience</p>
+
+    <div class="class-days">
+      <label>Class Days</label>
+      <p>Please select the days you are available to attend class</p>
+      <div class="days-options">
+        <label><input type="checkbox"> Monday</label>
+        <label><input type="checkbox"> Tuesday</label>
+        <label><input type="checkbox"> Wednesday</label>
+        <label><input type="checkbox"> Thursday</label>
+        <label><input type="checkbox"> Friday</label>
+        <label><input type="checkbox"> Saturday</label>
+      </div>
+    </div>
+
+    <div class="agreement">
+      <input type="checkbox" required>
+      <label>I agree to the terms and conditions of the class registration</label>
+    </div>
+
+    <button type="submit">Register Now!</button>
+  </form>
+</div>
+
+    
+</body>
+</html>
