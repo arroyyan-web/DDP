@@ -48,16 +48,16 @@ st.markdown("""
 }
 .metric {
     background: linear-gradient(135deg,#ff7043,#66bb6a);
-    color: white;
+    color: #FAFAFA ;
     padding: 20px;
     border-radius: 18px;
     text-align: center;
     transition: 0.3s;
 }
 .metric:hover { transform: scale(1.08); }
-button { border-radius: 12px !important; }
+button { border-radius: 12px ; }
 .menu-item {
-    background: white;
+    background: #FAFAFA ;
     padding: 15px;
     border-radius: 12px;
     margin: 10px 0;
@@ -80,6 +80,21 @@ button { border-radius: 12px !important; }
     text-align: center;
     color: #558b2f;
     margin-bottom: 30px;
+}
+html, body, [class*="css"] {
+    color: #4B4B4B;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #4B4B4B;
+}
+label, span, p, div {
+    color: #4B4B4B;
+}
+section[data-testid="stSidebar"] * {
+    color: #4B4B4B;
+}
+.metric {
+    color: #f5f5f5;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -296,7 +311,7 @@ elif not st.session_state.login:
     st.markdown("</div>",unsafe_allow_html=True)
 
 else:
-    # Sidebar dengan menu dan tombol logout
+    # Sidebar 
     st.sidebar.title("📌 MENU NAVIGASI")
     
     menu = st.sidebar.radio(
@@ -311,7 +326,7 @@ else:
     
     st.sidebar.markdown("---")
     
-    # Tombol logout di sidebar
+    # Tombol logout
     if st.sidebar.button("🚪 Logout", type="primary", use_container_width=True):
         st.session_state.clear()
         st.session_state.welcome = True
@@ -334,12 +349,12 @@ else:
             total_menu = len(st.session_state.menu_dipilih)
             st.success(f"**Menu Terpilih:** {total_menu}/5")
 
-    # PILIH MENU MAKANAN
+    # MENU MAKANAN
     elif menu == "🍽️ Pilih Menu Makanan":
         set_bg("https://images.unsplash.com/photo-1498837167922-ddd27525d352")
         st.header("🍽️ Pilih Menu Makanan Harian")
         
-        # Tab untuk setiap waktu makan
+        # waktu makan
         tab1, tab2, tab3, tab4, tab5 = st.tabs([
             "🌞 Sarapan", 
             "🍱 Makan Siang", 
@@ -468,7 +483,7 @@ else:
                             st.session_state.menu_dipilih["Minuman"] = menu_item
                             st.rerun()
 
-    # TOTAL GIZI
+    # TOTAL
     elif menu == "📊 Total Gizi":
         set_bg("https://images.unsplash.com/photo-1512621776951-a57141f2eefd")
         st.header("📊 Total Gizi Sehari")
@@ -476,7 +491,7 @@ else:
         if len(st.session_state.menu_dipilih) == 0:
             st.warning("⚠️ Anda belum memilih menu makanan. Silakan pilih menu terlebih dahulu.")
         else:
-            # Menampilkan menu yang dipilih
+            # menu yang dipilih
             st.subheader("Menu Anda Hari Ini:")
             
             col1, col2, col3, col4, col5 = st.columns(5)
@@ -518,7 +533,7 @@ else:
             
             st.markdown("---")
             
-            # Hitung total
+            # total
             total = hitung_total_dari_pilihan()
             df = pd.DataFrame.from_dict(total,orient="index",columns=["Jumlah"])
 
